@@ -7,12 +7,10 @@
 // Execute `rustlings hint move_semantics2` or use the `hint` watch subcommand
 // for a hint.
 
-// I AM NOT DONE
-
 fn main() {
     let vec0 = Vec::new();
 
-    let mut vec1 = fill_vec(vec0);
+    let mut vec1 = fill_vec(vec0.clone());
 
     println!("{} has length {}, with contents: `{:?}`", "vec0", vec0.len(), vec0);
 
@@ -22,6 +20,7 @@ fn main() {
 }
 
 fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
+    // not suggested, copied inner fully
     let mut vec = vec;
 
     vec.push(22);

@@ -10,19 +10,24 @@
 fn main() {
     let data = "Rust is great!".to_string();
 
-    get_char(data);
+    get_char(&data);
 
-    string_uppercase(&data);
+    string_uppercase(data);
 }
 
 // Should not take ownership
-fn get_char(data: String) -> char {
+fn get_char(data: &String) -> char {
     data.chars().last().unwrap()
 }
 
 // Should take ownership
-fn string_uppercase(mut data: &String) {
-    data = &data.to_uppercase();
+fn string_uppercase(data: String) {
+    // uniqs ??? how to change this data to uppercase in this area, not in the last line
+    // data.to_uppercase();
+    // data = data.to_uppercase();
+    // data = &data.clone().to_uppercase();
+    let data = data.to_uppercase();
+
 
     println!("{}", data);
 }
