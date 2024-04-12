@@ -15,6 +15,7 @@ fn main() {
 
     string_uppercase(data);
 
+    // 此时data已经元神离开了肉身，用不了了
     // can_use_by_ref_here(&data);
 
     // 也可以直接在函数里把一个 immutable 变成 mutable
